@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
+
   const { cart, removeFromCart } = useContext(CartContext);
+
+  const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity,0);
+
 
   return (
     <div className="container">
@@ -26,6 +31,12 @@ const Cart = () => {
               </div>
             </div>
           ))}
+        </div>
+      )}
+      {cart.length > 0 && (
+        <div className="text-center mt-4">
+          <h4>Total Amount: ₹{totalAmount}</h4>
+          <Link to="/checkout" className="btn btn-success btn-lg">Proceed to Checkout</Link>
         </div>
       )}
     </div>
