@@ -5,8 +5,9 @@ import Products from './pages/Products.jsx';
 import ProductDetail from './pages/ProductDetail.jsx';
 import Cart from './pages/Cart.jsx';
 import Checkout from './pages/Checkout.jsx';
+import OrderConfirmation from './pages/OrderConfirmation.jsx';
+import Home from './pages/Home.jsx';
 
-const Home = () => <h2 className="text-center mt-5">Welcome to E-Shop</h2>;
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
         </Routes>
       </div>
     </Router>
